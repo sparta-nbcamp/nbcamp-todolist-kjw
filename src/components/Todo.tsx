@@ -1,4 +1,4 @@
-import { Todo } from "./global.tsx";
+import { Todo } from "../global_types.tsx";
 
 export default function TodoItem({item, toggleTodo, removeTodo}: { item: Todo, toggleTodo: () => void, removeTodo: () => void }) {
   return (
@@ -11,8 +11,8 @@ export default function TodoItem({item, toggleTodo, removeTodo}: { item: Todo, t
       </div>
       <hr className="w-full border-gray-300" />
       <div className="flex space-x-2">
-        <button className="p-2 bg-red-500 text-white rounded-md w-1/2" onClick={() => removeTodo()}>삭제</button>
-        <button className="p-2 bg-green-400 text-white rounded-md w-1/2" onClick={() => toggleTodo()}>{item.complete ? "취소" : "완료"}</button>
+        <button className="p-2 bg-red-500 text-white rounded-md w-1/2" onClick={removeTodo}>삭제</button>
+        <button className="p-2 bg-green-400 text-white rounded-md w-1/2" onClick={toggleTodo}>{item.complete ? "취소" : "완료"}</button>
       </div>
     </div>
   )
